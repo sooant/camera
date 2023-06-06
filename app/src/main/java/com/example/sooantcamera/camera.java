@@ -125,6 +125,7 @@ public class camera extends AppCompatActivity {
         );
 
         mCurrentPhotoPath = image.getAbsolutePath();
+        System.out.println("aaaaaaa " + mCurrentPhotoPath);
         return image;
     }
     // 카메라 인텐트 실행하는 부분
@@ -136,7 +137,8 @@ public class camera extends AppCompatActivity {
 
             try { photoFile = createImageFile(); }
             catch (IOException ignored) { }
-            if(photoFile != null) {
+            if (photoFile != null) {
+                System.out.println(photoFile.getAbsolutePath());
                 Uri photoURI = FileProvider.getUriForFile(this, "com.example.sooantcamera.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);

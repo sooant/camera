@@ -15,6 +15,7 @@ public class Mainpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
+        btn_photosearch = findViewById(R.id.btn_photosearch);
 
         btn_photosearch.setOnClickListener(new View.OnClickListener() {
             @Override
